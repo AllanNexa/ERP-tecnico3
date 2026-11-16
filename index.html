@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFix — Assistência Técnica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="brand"><i>TF</i> TechFix</div>
+        <nav aria-label="Principal">
+            <a href="#painel">Painel</a>
+            <a href="#ordens">Ordens</a>
+            <a href="#clientes">Clientes</a>
+        </nav>
+        <button class="btn" id="novaOrdem">Nova ordem</button>
+    </header>
+
+    <!-- O JavaScript desenha a tela atual aqui dentro -->
+    <main id="view"></main>
+
+    <dialog id="dlg"></dialog>
+    <div id="toast" role="status"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
