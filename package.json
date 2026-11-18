@@ -1,0 +1,39 @@
+{
+  "name": "techfix",
+  "version": "1.0.0",
+  "description": "Sistema de assistência técnica TechFix",
+  "main": "main.js",
+  "author": "TechFix",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis --x64",
+    "dist:win:zip": "electron-builder --win zip --x64"
+  },
+  "devDependencies": {
+    "electron": "45.3.4",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.techfix.assistencia",
+    "productName": "TechFix",
+    "files": [
+      "index.html",
+      "app.js",
+      "style.css",
+      "main.js"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "artifactName": "${productName}-Windows-x64-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "${productName}-Instalador-${version}.${ext}"
+    }
+  }
+}

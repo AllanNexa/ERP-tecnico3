@@ -11,9 +11,6 @@ function criarJanela() {
   });
 
   win.loadFile(path.join(__dirname, 'index.html'));
-
-  // Abre o console (F12) para ver erros. Apague esta linha quando estiver tudo certo.
-  win.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
