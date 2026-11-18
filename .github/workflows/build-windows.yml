@@ -1,0 +1,38 @@
+name: Criar instalador Windows
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Obter codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Criar instalador Windows
+        run: npm run dist:win
+
+      - name: Enviar instalador
+        uses: actions/upload-artifact@v4
+        with:
+          name: TechFix-Windows
+          path: |
+            dist/*.exe
+          if-no-files-found: error
